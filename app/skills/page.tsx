@@ -52,7 +52,6 @@ export default function Skills() {
               className="w-38 h-55 mx-auto rounded-full 
               border border-white/20 
               flex flex-col items-center justify-center 
-              bg-[#1a1a1a] 
               hover:border-orange-500 transition duration-300"
             >
               <div className="text-6xl mb-1">{skill.icon}</div>

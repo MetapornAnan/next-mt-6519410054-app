@@ -25,7 +25,7 @@ export default function Specializations() {
         My <span className="text-[#FF5C00]">Specializations</span>
       </h2>
 
-      <div className="flex flex-col gap-6 w-full max-w-[800px]">
+      <div className="flex flex-col gap-6 w-full max-w-[650px]">
         {specializations.map((spec, index) => {
           const Icon = spec.icon;
           return (
