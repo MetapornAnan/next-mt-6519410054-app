@@ -6,8 +6,8 @@ import { FaXTwitter } from "react-icons/fa6";
  
 export default function MyCard() {
   return (
-    <div className="w-1/4 bg-[#1D1C1D] text-white rounded-xl shadow-lg p-3.5">
-      <p className="text-xl mb-2 first-letter:text-orange-500">Metaporn</p>
+    <div className="w-full bg-[#1D1C1D] text-white rounded-xl shadow-lg p-3.5 border border-white/10 mt-2.5 mx-3">
+      <p className="text-2xl mb-2 first-letter:text-orange-500">Metaporn</p>
       <div className="text-center">
         <Image
           src={Profile}
@@ -19,8 +19,8 @@ export default function MyCard() {
 
         <br />
  
-        <p className="text-sm text-gray-400">STUID: 6519410054</p>
-        <p className="text-sm text-gray-300 mt-1">Fullstack Web Developer</p>
+        <p className="text-xl text-gray-400">STUID: 6519410054</p>
+        <p className="text-xl text-gray-300 mt-1">Fullstack Web Developer</p>
       </div>
 
       <br />
