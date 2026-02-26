@@ -1,43 +1,45 @@
-'use client';
-import { Home, User, GraduationCap, Grid, Briefcase, Cpu, Mail } from 'lucide-react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+"use client";
+
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+import {
+  FaUser,
+  FaBook,
+} from "react-icons/fa";
+import { GrHomeRounded } from "react-icons/gr";
+import { SiWheniwork } from "react-icons/si";
+import { MdWorkOutline } from "react-icons/md";
+import { AiOutlineCode } from "react-icons/ai";
+import { GrContact } from "react-icons/gr";
+
+const menus = [
+  { icon: <GrHomeRounded />, path: "/" },
+  { icon: <FaUser />, path: "/aboutme" },
+  { icon: <FaBook />, path: "/eduexp" },
+  { icon: <SiWheniwork />, path: "/spec" },
+  { icon: <MdWorkOutline />, path: "/projects" },
+  { icon: <AiOutlineCode />, path: "/skills" },
+  { icon: <GrContact />, path: "/contactme" },
+];
 
 export default function SideMenu() {
   const pathname = usePathname();
 
-  const menuItems = [
-    { icon: Home, href: '/', label: 'Home' },
-    { icon: User, href: '/aboutme', label: 'About' },
-    { icon: GraduationCap, href: '/eduexp', label: 'Education' },
-    { icon: Grid, href: '/spec', label: 'Services' },
-    { icon: Briefcase, href: '/projects', label: 'Projects' },
-    { icon: Cpu, href: '/skills', label: 'Skills' },
-    { icon: Mail, href: '/contactme', label: 'Contact' },
-  ];
-
   return (
-    <div className="fixed right-10 top-1/2 -translate-y-1/2 flex flex-col items-center gap-6 p-4 border border-[#333333] rounded-full bg-black/20 backdrop-blur-sm">
-      {menuItems.map((item) => {
-        const Icon = item.icon;
-        const isActive = pathname === item.href;
-
-        return (
-          <Link key={item.href} href={item.href} className="relative group">
-            <div className="absolute right-full mr-4 px-3 py-1 bg-[#333333] text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-              {item.label}
-              <div className="absolute top-1/2 -right-1 -translate-y-1/2 border-y-4 border-y-transparent border-l-4 border-l-[#333333]"></div>
-            </div>
-
-            <Icon 
-              className={`w-6 h-6 transition-colors duration-300 ${
-                isActive ? 'text-[#ff5722]' : 'text-[#8c8c8c] hover:text-white'
-              }`} 
-              strokeWidth={1.5}
-            />
-          </Link>
-        );
-      })}
+    <div className="fixed right-[60px] top-1/2 -translate-y-1/2 border border-[#7D7373] rounded-full px-5 py-9 flex flex-col gap-7">
+      {menus.map((menu, i) => (
+        <Link
+          key={i}
+          href={menu.path}
+          className={`text-[26px] transition ${
+            pathname === menu.path
+              ? "text-[#FF5C00]"
+              : "text-[#9a9a9f] hover:text-[#ff5100]"
+          }`}
+        >
+          {menu.icon}
+        </Link>
+      ))}
     </div>
   );
 }
